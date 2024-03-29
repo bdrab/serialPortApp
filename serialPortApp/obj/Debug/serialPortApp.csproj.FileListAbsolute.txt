@@ -12,9 +12,9 @@ C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\bin\Debug\keyPadApp.exe.conf
 C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\bin\Debug\keyPadApp.exe
 C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\bin\Debug\keyPadApp.pdb
 C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\obj\Debug\serialPortApp.csproj.AssemblyReference.cache
-C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\obj\Debug\serialPortApp.Form1.resources
 C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\obj\Debug\keyPadApp.Properties.Resources.resources
 C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\obj\Debug\serialPortApp.csproj.GenerateResource.cache
 C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\obj\Debug\serialPortApp.csproj.CoreCompileInputs.cache
 C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\obj\Debug\keyPadApp.exe
 C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\obj\Debug\keyPadApp.pdb
+C:\Users\Bartek\Desktop\serialPortApp\serialPortApp\obj\Debug\serialPortApp.serialPortApp.resources

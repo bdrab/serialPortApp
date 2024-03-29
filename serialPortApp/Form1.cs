@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
+using System.Runtime.Remoting.Messaging;
 using System.Threading;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace serialPortApp
 {
-    public partial class Form1 : Form
+    public partial class serialPortApp : Form
     {
 
         public Thread trd;
+        bool endThread = false;
+        bool sendData = false;
 
-
-        public Form1()
+        public serialPortApp()
         {
             InitializeComponent();
             Load += new EventHandler(serialPORTS_Load);
@@ -29,41 +25,67 @@ namespace serialPortApp
         {
             while (true)
             {
-                txtBOX.AppendText(serialPORTS.SelectedItem.ToString());
-                txtBOX.AppendText("\r\n");
-                txtBOX.Select(txtBOX.TextLength + 1, 0);
-                Thread.Sleep(1000);
+
+                if (serialPort1.BytesToRead > 0)
+                {
+                    string message = serialPort1.ReadLine();
+                    txtBOX.AppendText($"{DateTime.Now.ToString()}--->>>{message}");
+                    txtBOX.AppendText("\r\n");
+                    txtBOX.Select(txtBOX.TextLength + 1, 0);
+
+                }
+                else if (sendData) {
+                    
+                    string dataToSend = txtSENDDATA.Text;
+                    serialPort1.Write(dataToSend);
+
+                    txtBOX.AppendText($"{DateTime.Now.ToString()}<<<---{dataToSend}");
+                    txtBOX.AppendText("\r\n");
+                    txtBOX.Select(txtBOX.TextLength + 1, 0);
+
+                    txtSENDDATA.Text = "";
+                    sendData = false;
+                }
+                if (endThread) {
+                    serialPort1.Close();
+                    trd.Abort();
+                }
             }
         }
 
         private void btnSTART_Click(object sender, EventArgs e)
         {
-            if (trd == null) {
-                if (serialPORTS.SelectedItem != null)
-                {
-                    trd = new Thread(new ThreadStart(this.ThreadTask));
-                    trd.IsBackground = true;
-                    trd.Start();
-                    txtBOX.AppendText("\r\n");
-                    txtBOX.AppendText(serialPORTS.SelectedItem.ToString());
-                    MessageBox.Show("Communication started", "OK");
-                }
 
-                else {
-                    MessageBox.Show("Please select PORT", "Error");
-                }
-            }
-            else if (!trd.IsAlive) {
+            if (serialPORTS.SelectedItem != null && (trd == null || trd.IsAlive == false))
+            {
+                endThread = false;
+                serialPort1.PortName = serialPORTS.SelectedItem.ToString();
+                serialPort1.BaudRate = 9600;
+                    
+                serialPort1.Open();
+
                 trd = new Thread(new ThreadStart(this.ThreadTask));
                 trd.IsBackground = true;
                 trd.Start();
+                txtBOX.AppendText("***Communication started***");
+                txtBOX.AppendText("\r\n");
+            }
+
+            else {
+                MessageBox.Show("Please select PORT", "Error");
             }
         }
 
         private void btnSTOP_Click(object sender, EventArgs e)
         {
-            trd.Abort();
-            MessageBox.Show("Thread stopped!");
+            endThread = true;
+            txtBOX.AppendText("***Communication stopped***");
+            txtBOX.AppendText("\r\n");
+        }
+
+        private void btnSEND_Click(object sender, EventArgs e)
+        {
+            sendData = true;
         }
 
         private void serialPORTS_Load(object sender, EventArgs e) 
@@ -77,6 +99,12 @@ namespace serialPortApp
             }
         }
 
-
+        private void txtSENDDATA_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSEND_Click(this, new EventArgs());
+            }
+        }
     }
 }

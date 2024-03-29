@@ -1,6 +1,6 @@
 ﻿namespace serialPortApp
 {
-    partial class Form1
+    partial class serialPortApp
     {
         /// <summary>
         /// Required designer variable.
@@ -31,50 +31,51 @@
             this.components = new System.ComponentModel.Container();
             this.txtBOX = new System.Windows.Forms.TextBox();
             this.btnSTART = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtSENDDATA = new System.Windows.Forms.TextBox();
+            this.btnSEND = new System.Windows.Forms.Button();
             this.serialPORTS = new System.Windows.Forms.ComboBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.btnSTOP = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // txtBOX
             // 
-            this.txtBOX.Location = new System.Drawing.Point(14, 60);
+            this.txtBOX.Location = new System.Drawing.Point(14, 39);
             this.txtBOX.Multiline = true;
             this.txtBOX.Name = "txtBOX";
             this.txtBOX.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtBOX.Size = new System.Drawing.Size(494, 300);
+            this.txtBOX.Size = new System.Drawing.Size(494, 321);
             this.txtBOX.TabIndex = 0;
             // 
             // btnSTART
             // 
-            this.btnSTART.Location = new System.Drawing.Point(318, 12);
+            this.btnSTART.Location = new System.Drawing.Point(285, 12);
             this.btnSTART.Name = "btnSTART";
-            this.btnSTART.Size = new System.Drawing.Size(80, 19);
+            this.btnSTART.Size = new System.Drawing.Size(149, 21);
             this.btnSTART.TabIndex = 2;
             this.btnSTART.Text = "START";
             this.btnSTART.UseVisualStyleBackColor = true;
             this.btnSTART.Click += new System.EventHandler(this.btnSTART_Click);
             // 
-            // textBox3
+            // txtSENDDATA
             // 
-            this.textBox3.Location = new System.Drawing.Point(14, 366);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox3.Size = new System.Drawing.Size(384, 45);
-            this.textBox3.TabIndex = 3;
+            this.txtSENDDATA.Location = new System.Drawing.Point(14, 366);
+            this.txtSENDDATA.Multiline = true;
+            this.txtSENDDATA.Name = "txtSENDDATA";
+            this.txtSENDDATA.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtSENDDATA.Size = new System.Drawing.Size(384, 45);
+            this.txtSENDDATA.TabIndex = 3;
+            this.txtSENDDATA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSENDDATA_KeyDown);
             // 
-            // button2
+            // btnSEND
             // 
-            this.button2.Location = new System.Drawing.Point(415, 366);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 44);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "SEND";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSEND.Location = new System.Drawing.Point(415, 366);
+            this.btnSEND.Name = "btnSEND";
+            this.btnSEND.Size = new System.Drawing.Size(91, 44);
+            this.btnSEND.TabIndex = 4;
+            this.btnSEND.Text = "SEND";
+            this.btnSEND.UseVisualStyleBackColor = true;
+            this.btnSEND.Click += new System.EventHandler(this.btnSEND_Click);
             // 
             // serialPORTS
             // 
@@ -87,9 +88,9 @@
             "5",
             "6",
             "7"});
-            this.serialPORTS.Location = new System.Drawing.Point(32, 9);
+            this.serialPORTS.Location = new System.Drawing.Point(14, 12);
             this.serialPORTS.Name = "serialPORTS";
-            this.serialPORTS.Size = new System.Drawing.Size(248, 21);
+            this.serialPORTS.Size = new System.Drawing.Size(265, 21);
             this.serialPORTS.TabIndex = 5;
             this.serialPORTS.Text = "Select COM port";
             // 
@@ -99,39 +100,31 @@
             // 
             // btnSTOP
             // 
-            this.btnSTOP.Location = new System.Drawing.Point(428, 12);
+            this.btnSTOP.Location = new System.Drawing.Point(440, 12);
             this.btnSTOP.Name = "btnSTOP";
-            this.btnSTOP.Size = new System.Drawing.Size(80, 19);
+            this.btnSTOP.Size = new System.Drawing.Size(68, 21);
             this.btnSTOP.TabIndex = 6;
             this.btnSTOP.Text = "STOP";
             this.btnSTOP.UseVisualStyleBackColor = true;
             this.btnSTOP.Click += new System.EventHandler(this.btnSTOP_Click);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(14, 40);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(491, 20);
-            this.progressBar1.TabIndex = 7;
-            // 
-            // Form1
+            // serialPortApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 417);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnSTOP);
             this.Controls.Add(this.serialPORTS);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.btnSEND);
+            this.Controls.Add(this.txtSENDDATA);
             this.Controls.Add(this.btnSTART);
             this.Controls.Add(this.txtBOX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "serialPortApp";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "serialPortApp";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,12 +134,11 @@
 
         private System.Windows.Forms.TextBox txtBOX;
         private System.Windows.Forms.Button btnSTART;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtSENDDATA;
+        private System.Windows.Forms.Button btnSEND;
         private System.Windows.Forms.ComboBox serialPORTS;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Button btnSTOP;
-        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
