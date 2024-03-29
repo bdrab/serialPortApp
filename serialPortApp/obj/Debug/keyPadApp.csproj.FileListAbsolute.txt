@@ -1,0 +1,10 @@
+C:\Users\Bartek\Desktop\keypad\keyPadApp\keyPadApp\bin\Debug\keyPadApp.exe.config
+C:\Users\Bartek\Desktop\keypad\keyPadApp\keyPadApp\bin\Debug\keyPadApp.exe
+C:\Users\Bartek\Desktop\keypad\keyPadApp\keyPadApp\bin\Debug\keyPadApp.pdb
+C:\Users\Bartek\Desktop\keypad\keyPadApp\keyPadApp\obj\Debug\keyPadApp.csproj.AssemblyReference.cache
+C:\Users\Bartek\Desktop\keypad\keyPadApp\keyPadApp\obj\Debug\keyPadApp.Form1.resources
+C:\Users\Bartek\Desktop\keypad\keyPadApp\keyPadApp\obj\Debug\keyPadApp.Properties.Resources.resources
+C:\Users\Bartek\Desktop\keypad\keyPadApp\keyPadApp\obj\Debug\keyPadApp.csproj.GenerateResource.cache
+C:\Users\Bartek\Desktop\keypad\keyPadApp\keyPadApp\obj\Debug\keyPadApp.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\Desktop\keypad\keyPadApp\keyPadApp\obj\Debug\keyPadApp.exe
+C:\Users\Bartek\Desktop\keypad\keyPadApp\keyPadApp\obj\Debug\keyPadApp.pdb
